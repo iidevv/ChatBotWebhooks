@@ -4,7 +4,6 @@ namespace Iidev\ChatBotWebhooks\Core;
 
 use Iidev\ChatBotWebhooks\Core\Main;
 use XCart\Extender\Mapping\Extender;
-use XLite\Core\Config;
 use XLite\Core\Database;
 use Qualiteam\SkinActAftership\Utils\Slug;
 
@@ -13,6 +12,7 @@ use Qualiteam\SkinActAftership\Utils\Slug;
  */
 class OrderTracking extends Main
 {
+
     protected function getCustomCarriers()
     {
         return [
@@ -59,7 +59,7 @@ class OrderTracking extends Main
     protected function processTrackingNumbers($order)
     {
         $trackingNumbers = $order->getTrackingNumbers();
-        if (empty($trackingNumbers)) {
+        if ($trackingNumbers->count() == 0) {
             $message = $this->generateTextElement("Your order is being prepared. Please give us a little more time!");
 
             return $this->generateResponse($message);
