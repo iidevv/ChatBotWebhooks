@@ -1,0 +1,10 @@
+version: 5.5.0.4
+type: common
+authorName: "Ilya I"
+moduleName: "ChatBot Webhooks"
+description: "ChatBot webhooks allows you to easily return any Bot Response(s) or Attribute(s) directly from your store to the ongoing chat."
+minorRequiredCoreVersion: 0
+dependsOn: {}
+incompatibleWith: {}
+showSettingsForm: true
+canDisable: true

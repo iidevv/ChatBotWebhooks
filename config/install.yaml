@@ -1,0 +1,10 @@
+
+XLite\Model\Config:
+  - name: token
+    category: Iidev\ChatBotWebhooks
+    type: XLite\View\FormField\Input\Text
+    orderby: 100
+    value: ''
+    translations:
+      - code: en
+        option_name: 'Verification token'
