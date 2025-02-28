@@ -53,6 +53,18 @@ class OrderTracking extends Main
             ];
         }
 
+        if($order->getPaymentStatus()?->getId() === 7) {
+            $message = $this->generateTextElement("We've refunded your payment. Let us know if you need anything else!");
+
+            return $this->generateResponse($message);
+        }
+
+        if(in_array($order->getShippingStatus()?->getId(), [5, 20])) {
+            $message = $this->generateTextElement("Your order has been canceled. Let us know if you need any assistance!");
+
+            return $this->generateResponse($message);
+        }
+
         return $this->processTrackingNumbers($order);
     }
 
